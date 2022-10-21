@@ -7,7 +7,6 @@ import styles from '../styles/Home.module.css'
 // import styles2 from '../styles/Home2.module.css'
 
 export default function Home() {
-  console.log("abc123",styles)
   return (
     <div className={styles.container}>
       <Head>
