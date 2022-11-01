@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Script from 'next/script'
-import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -28,15 +26,6 @@ export default function Home() {
       </Head>
       {/* <Script src='/sc.js' strategy="lazyOnload"></Script> */}
 
-      <nav className={styles.mainNav}>
-        <ul>
-          <Link href='/'><li>Home</li></Link>
-          <Link href='/about'><li>About</li></Link>
-          <Link href='/blog'><li>Blog</li></Link>
-          <Link href='/contact'><li>Contact</li></Link>
-        </ul>
-      </nav>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
           <span className='dummy'>Hunting Coder</span>
@@ -50,7 +39,7 @@ export default function Home() {
 
         {/* <div className={`${styles1.con} ${styles2.con}`}> */}
         <div>
-          <h2>Popular Blogs</h2>
+          <h2>Latest Blogs</h2>
           <div className="blogItem">
             <h3>How to learn Javascript in 2022?</h3>
             <p>Javascript is the language used in to design logic for the web</p>
