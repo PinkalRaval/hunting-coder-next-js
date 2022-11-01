@@ -38,21 +38,7 @@ export default function Home() {
         </p>
 
         {/* <div className={`${styles1.con} ${styles2.con}`}> */}
-        <div>
-          <h2>Latest Blogs</h2>
-          <div className="blogItem">
-            <h3>How to learn Javascript in 2022?</h3>
-            <p>Javascript is the language used in to design logic for the web</p>
-          </div>
-          <div className="blogItem">
-            <h3>How to learn Javascript in 2022?</h3>
-            <p>Javascript is the language used in to design logic for the web</p>
-          </div>
-          <div className="blogItem">
-            <h3>How to learn Javascript in 2022?</h3>
-            <p>Javascript is the language used in to design logic for the web</p>
-          </div>
-        </div>
+       
       </main>
 
       <footer className={styles.footer}>
