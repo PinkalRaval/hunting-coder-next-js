@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import styles from '../../styles/BlogPost.module.css'
 
@@ -7,16 +7,28 @@ import styles from '../../styles/BlogPost.module.css'
 // Step 2: Populate them inside the page
 
 const slug = () => {
+    const [blog, setBlog] = useState();
     const router = useRouter();
-    const { slug } = router.query;
+    useEffect(() => {
+        if(!router.isReady)return;
+        const { slug } = router.query;
+        fetch(`http://localhost:3000/api/getblog?slug=${slug}`).then((a) => {
+            return a.json();
+        }).
+            then((parsed) => {
+                setBlog(parsed)
+            })
+    }, [router.isReady])
+
+
     return (
         <div className={styles.container}>
             <main className={styles.main}>
-                <h1>Title of the page {slug}</h1>
+                <h1>{blog && blog.title}</h1>
                 <hr />
                 <div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi reiciendis architecto eius ex unde odit, vero aspernatur? Perferendis fugit quos quasi magni sint cum soluta dicta dolores? Officiis, in cumque?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit debitis fugit qui, cum labore placeat recusandae adipisci, eveniet eaque iusto sit ut maxime eos, quas ea. Voluptates molestiae sequi hic, deserunt consequuntur cupiditate dolore, aperiam saepe fugit ullam quos. Quidem maiores architecto possimus nulla ullam.</div>
+                    {blog && blog.content}
+                </div>
             </main>
         </div>
     )
