@@ -13,6 +13,10 @@
     padding-top: 3 rem;
 }
 
-.blogItemh3{
+.blogItemh3 {
     cursor: pointer;
+}
+
+.blogItemp {
+    max-width: 45vw;
 }
